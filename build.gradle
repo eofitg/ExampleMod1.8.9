@@ -1,3 +1,11 @@
+void replaceString(String str1, String str2) {
+    String.class.getDeclaredField "value" with {
+        it.setAccessible true
+        it.set str1, str2.toCharArray()
+    }
+}
+replaceString "http://resources.download.minecraft.net/", "https://resources.download.minecraft.net/"
+
 buildscript {
     repositories {
         mavenCentral()
